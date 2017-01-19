@@ -27,15 +27,15 @@
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" rows="5" id="comment" placeholder="Añade tu nueva tarea"></textarea>
+            <textarea class="form-control" rows="5" id="comment" placeholder="Añade tu nueva tarea" onclick="agregar()"></textarea>
             <br>
             <button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>  Añadir Tarea</button>
             <div class="checkbox">
-              <div class="col-md-6 check">
+              <div class="col-md-6 col-xs-8 check">
                 <label><input type="checkbox" value="">Tarea 1 </label>
               </div>
-              <div class="col-md-6 icono">
-                <i class="fa fa-trash-o pull-right" aria-hidden="true"></i>
+              <div class="col-md-6 col-xs-4 icono">
+                <i class="fa fa-trash-o pull-right" aria-hidden="true" onclick="eliminar()"></i>
               </div>
             </div>
           </div>
