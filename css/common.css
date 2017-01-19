@@ -1,0 +1,23 @@
+*{
+  /*font-family: "Crafty Girls";*/
+ 
+}
+
+.title{
+  background-color: #e0e0e0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 10px;
+}
+.check{
+  background-color: #e0e0e0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+}
+.icono{
+  background-color: #e0e0e0;
+  padding-top: 5px;
+  padding-bottom: 11px;
+  padding-left: 7px;
+}
