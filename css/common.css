@@ -1,5 +1,6 @@
 *{
   /*font-family: "Crafty Girls";*/
+
  
 }
 
@@ -10,14 +11,27 @@
   margin-bottom: 10px;
 }
 .check{
-  background-color: #e0e0e0;
+
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 7px;
 }
-.icono{
+button{
+  margin-top: 10px;
+}
+ul li{
+    
+  list-style: none;
+  font-size: 12px;
+
+}
+ul{
+
+  padding:0; 
+}
+li{
   background-color: #e0e0e0;
-  padding-top: 5px;
-  padding-bottom: 11px;
-  padding-left: 7px;
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 10px;
 }
