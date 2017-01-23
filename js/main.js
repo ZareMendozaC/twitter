@@ -1,26 +1,60 @@
-var num=0;
-function agregar()
+
+var boton = document.getElementById('boton');
+var input = document.getElementById('text');
+var lista = document.getElementById('lista');
+
+boton.addEventListener('click', onButtonClick);
+
+function onButtonClick(evt)
 {
-   var check= document.getElementById("check");
-   var icono= document.getElementById("icono");
-   var text= document.getElementById("text").value;
-   var cadena_check='';
-   var cadena_icono='';
-   if(text=='')
-   {
-    alert("LLena el area de texto");
-   }
-   else{
-    cadena_check= '<li class="animated bounceIn"><label><input type="checkbox" value=""> '+text+'</label><i class="fa fa-trash-o pull-right" aria-hidden="true"></i></li>';
-    check.innerHTML+= cadena_check;
-    document.getElementById("text").value='';
-    var item=document.getElementsByTagName("li");
-    item[num].addEventListener('click',onItemClick);
-    }
-    num= num+1;
+  agregarMensaje();
 }
 
-function onItemClick(evt){
-  console.log(evt.target);
-  evt.target.parentNode.removeChild(evt.target);
+function agregarMensaje()
+{
+  //var cadena= '<label><input type="checkbox" value=""> '+text+'</label><i class="fa fa-trash-o pull-right" aria-hidden="true"></i>';
+  var item = document.createElement('li');
+  var label = document.createElement('label');
+  var opcion = document.createElement('input');
+  var icono = document.createElement('i');
+  icono.className= "fa fa-trash-o pull-right";
+  opcion.type= "checkbox";
+
+  label.innerHTML = input.value;
+  if(input.value=='')
+    {
+      alert("Ingrese una tarea en la caja de texto!");
+    }else{
+  item.className= "animated bounceIn";
+  item.appendChild(opcion);
+  item.appendChild(label);
+  item.appendChild(icono);
+  lista.appendChild(item);
+
+  input.value = '';
+  input.focus();
+
+  icono.addEventListener('click', onItemClick);
+  opcion.addEventListener('click',onOptionClick);
+  }
+}
+function onItemClick(evt)
+{
+  evt.target.parentNode.className= "animated bounceOut";
+  //evt.target.parentNode.className= "animated zoomOutDown"; 
+  setTimeout(function(){
+    lista.removeChild(evt.target.parentNode);    
+  }, 1000);
+}
+function onOptionClick(evt)
+{
+  if(evt.target.checked)
+  {
+  var padre = evt.target.parentNode.parentNode;
+ 
+  evt.target.nextSibling.className= "animated shake tachado";
+ }
+ else{
+  evt.target.nextSibling.className= "";
+  }
 }
